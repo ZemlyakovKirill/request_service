@@ -1,0 +1,39 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/requestservice
+    username: postgres
+    password: 123
+
+  liquibase:
+    user: postgres
+    password: 123
+    url: jdbc:postgresql://localhost:5432/requestservice
+    default-schema: public
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          phones:
+            url: https://cleaner.dadata.ru
+            connect-timeout: 5000
+            read-timeout: 5000
+            logger-level: full
+            default-request-headers:
+              Authorization: Token 8b9d70ce5186c8f616b809c3b1196dd289f7a369
+              X-Secret: 8a64c536661e91d59292664106109e2197abf423
+
+app:
+  jwt:
+    secret: 1"d@fs*
+    expiration: 60
+logging:
+  level:
+    sql: debug
+

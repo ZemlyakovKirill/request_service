@@ -33,7 +33,4 @@ app:
   jwt:
     secret: 1"d@fs*
     expiration: 60
-logging:
-  level:
-    sql: debug
 
